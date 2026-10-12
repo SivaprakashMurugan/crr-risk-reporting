@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: crr-postgres
+    environment:
+      POSTGRES_DB: crr_risk
+      POSTGRES_USER: crr_user
+      POSTGRES_PASSWORD: crr_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - crr_postgres_data:/var/lib/postgresql/data
+volumes:
+  crr_postgres_data:
